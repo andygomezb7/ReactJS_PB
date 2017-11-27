@@ -33,7 +33,9 @@ class Header extends React.Component {
 							<li>
 								<Dropdown id="dropdownUser">
 									<Dropdown.Toggle>
-										<img src="https://ruclip.com/chimg/84/UC3biv9gIP2KiaBmBy8Phe0Q.jpg" style={{width:'40px',height:'40px'}} className="img-circle" alt="Logo" /> Perfil
+										<img src="https://ruclip.com/chimg/84/UC3biv9gIP2KiaBmBy8Phe0Q.jpg" style={{width:'40px',height:'40px'}} className="img-circle" alt="Logo" /> 
+										<span>Perfil</span>
+										<span></span>
 									</Dropdown.Toggle>
 									<Dropdown.Menu>
 										<MenuItem>Premium</MenuItem>
