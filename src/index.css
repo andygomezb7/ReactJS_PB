@@ -1,7 +1,15 @@
+/**/
+@font-face{font-family:Circular;src:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-light.woff2) format('woff2'),url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-light.woff) format('woff');font-weight:300;font-style:normal}
+@font-face{font-family:Circular;src:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-book.woff2) format('woff2'),url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-book.woff) format('woff');font-weight:400;font-style:normal}
+@font-face{font-family:Circular;src:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-medium.woff2) format('woff2'),url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-medium.woff) format('woff');font-weight:500;font-style:normal}
+@font-face{font-family:Circular;src:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-bold.woff2) format('woff2'),url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-bold.woff) format('woff');font-weight:700;font-style:normal}
+@font-face{font-family:Circular;src:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-black.woff2) format('woff2'),url(https://sp-bootstrap.global.ssl.fastly.net/8.2.0/fonts/circular-black.woff) format('woff');font-weight:900;font-style:normal}
+/**/
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Circular,Helvetica,Arial,sans-serif;
 }
 
 .divider {
@@ -14,17 +22,21 @@ body {
     background-color: #fff;
 }
 
-#navbar-nav li a {
+#navbar-nav li.principal>a {
 	padding: 28px 17px;
 	color: white;
 	font-weight: bold;
 	font-size: 16px;
 }
 
-#navbar-nav li button {
+#navbar-nav li.principal button {
 	background: transparent;
 	border: 0;
 	padding: 20px 17px;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	box-shadow: none;
 }
 
 .navbar-logo {
@@ -51,6 +63,11 @@ body {
 .spotifyController header .navbar-brand {
 	height: auto;
 	padding: 0;
+	margin-left: 0!important;
+}
+
+.dropdown.open>#dropdownUser {
+	color: #222326;
 }
 
 .spotifyController .spotifyContainer {
@@ -71,4 +88,124 @@ body {
 
 .spotifyController .spotifyContainer .bgColor {
 	background-image: linear-gradient(90deg,#c074b2,#8ab5e8);
+}
+
+/**/
+.caret-bottom {
+	background-image: url(images/bottom.svg);
+	width: 30px;
+	height: 30px;
+}
+
+#dropdownUser .profileText {
+	margin: 0 3px 0 12px;
+	font-size: 15px;
+}
+
+#dropdownUser .img-circle {
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+}
+
+#dropdownUser .caret-bottom {
+	-webkit-transform: rotateX(0);
+    -ms-transform: rotateX(0);
+    -o-transform: rotateX(0);
+    transform: rotateX(0);
+    width: 12px;
+    height: 12px;
+    -webkit-transition: fill .2s;
+    -o-transition: fill .2s;
+    transition: fill .2s;
+    fill: currentColor;
+    vertical-align: baseline;
+    margin-left: 6px;
+    display: inline-block;
+}
+
+#dropdownUser .caret {
+	display: none;
+}
+
+header .dropdown-menu {
+	border: 0;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
+	margin-top: -6px;
+}
+
+header .dropdown-menu:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid #fff;
+    top: -14px;
+    right: 7px;
+}
+
+header .dropdown-menu {
+	border-radius: 3px;
+    padding: 4px 0 18px 0;
+    text-align: left;
+}
+
+header .dropdown-menu li {
+	text-align: left;
+	height: 31px;
+}
+
+header .dropdown-menu li a {
+	letter-spacing: 0;
+	font-size: 16px;
+	color: #000;
+	text-align: left!important;
+	padding: 10px 16px 10px 16px;
+	text-transform: none;
+	white-space: nowrap;
+	font-weight: bold;
+}
+
+header .dropdown-menu li.logout-link a {
+	color: #919496;
+}
+
+.spotifyContent {
+	padding-top: 140px;
+	padding-bottom: 110px;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: -ms-flex;
+	display: flex;
+}
+
+.hero-intro small,
+.hero-intro h1,
+.hero-intro h3 {
+	color: white;
+}
+
+.hero-intro small {
+	font-weight: 700;	
+	font-size: 12px;
+}
+
+.hero-intro h1 {
+	font-size: 80px;
+	font-weight: 900;
+	letter-spacing: -.04em;
+	line-height: 1.15;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.hero-intro h3 {
+    font-size: 24px;
+    letter-spacing: -.01em;
 }
