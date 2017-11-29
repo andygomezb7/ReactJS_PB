@@ -12,6 +12,10 @@ body {
   font-family: Circular,Helvetica,Arial,sans-serif;
 }
 
+ul, ol, li {
+	list-style: none;
+}
+
 .divider {
 	height: 16px;
 	margin-bottom: 32px;
@@ -61,7 +65,6 @@ body {
 }
 
 .spotifyController header .navbar-brand {
-	height: auto;
 	padding: 0;
 	margin-left: 0!important;
 }
@@ -71,7 +74,9 @@ body {
 }
 
 .spotifyController .spotifyContainer {
-	min-height: 800px;
+	width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .spotifyController .spotifyContainer .bgBlack,
@@ -172,7 +177,7 @@ header .dropdown-menu li.logout-link a {
 }
 
 .spotifyContent {
-	padding-top: 140px;
+	padding-top: 131px;
 	padding-bottom: 110px;
 	-webkit-align-items: center;
 	-moz-align-items: center;
@@ -183,6 +188,26 @@ header .dropdown-menu li.logout-link a {
 	display: -ms-flexbox;
 	display: -ms-flex;
 	display: flex;
+}
+
+.spotifyContent .flex-row {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
 }
 
 .hero-intro small,
@@ -208,4 +233,216 @@ header .dropdown-menu li.logout-link a {
 .hero-intro h3 {
     font-size: 24px;
     letter-spacing: -.01em;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.hero-intro .btn-player {
+    background-color: #1aa34a;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 21px 56px 19px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    margin: 32px 0;
+}
+
+/***/
+.spotifyAlbumList {
+	
+}
+.spotifyAlbumList ul {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+.spotifyAlbumList li {
+	padding: 8px;
+/*    transform: translateY(0) scale(1);
+	-webkit-transform: translateY(0) scale(1);*/
+    transform: translateY(20px) scale(0.9);
+    opacity: 1;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+    transition: transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+}
+.spotifyAlbumList li a {
+	position: relative;
+	display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+.spotifyAlbumList li a .overlay {
+	-webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background: rgba(0,0,0,.8);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+.spotifyAlbumList li a .description {
+	-webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+}
+.spotifyAlbumList li a:hover .description,
+.spotifyAlbumList li a:hover .overlay {
+	opacity: 1;
+	-webkit-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+}
+.spotifyAlbumList li a .description h2 {
+	font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+.spotifyAlbumList li a .description h4 {
+	font-size: 14px;
+	color: #919496;
+}
+.spotifyAlbumList li a .description #album-play {
+	width: 25px;
+	height: 25px;
+}
+.spotifyAlbumList li a .box {
+	box-shadow: 1px 1px 16px -2px rgba(0,0,0,.3);
+	-webkit-box-shadow: 1px 1px 16px -2px rgba(0,0,0,.3);
+	-moz-box-shadow: 1px 1px 16px -2px rgba(0,0,0,.3);
+}
+.spotifyAlbumList li a .box .content {
+}
+
+@media only screen and (max-width: 990px) {
+	.navbar-highlight-black {
+		background-color: #000!important;
+	}
+	.navbar-header {
+		margin: 0!important;
+	}
+	.navbar-toggle {
+		margin-top: 9px;
+		margin-bottom: 9px;
+		border: 0;
+		margin-right: -10px;
+	}
+	.navbar {
+	    min-height: 54px;
+	}
+	.navbar-logo {
+		width: 89px;
+		height: 27px;
+		background-size: 100% 100%;
+	    margin-top: 12px;
+	}
+	.hero-intro {
+		text-align: center;
+	}
+	.hero-intro h1 {
+		font-size: 48px;
+		font-weight: 900;
+		letter-spacing: -.04em;
+		line-height: 1.15;
+	}
+	.hero-intro h3 {
+		font-size: 20px;
+		font-weight: 900;
+		line-height: 1.4;
+	}
+	.spotifyContent {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+	.navbar-toggle .icon-bar {
+		height: 3px;
+		width: 22px;
+		background-color: white!important;
+	}
+	.spotifyAlbumList ul {
+		white-space: nowrap;
+		overflow-x: auto;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 378px;
+		display: block;
+	}
+	.spotifyAlbumList li {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+		width: 55%;
+		min-height: 1;
+		position: relative;
+		padding-top: 12px;
+	}
+	.spotifyAlbumList li .description {
+		position: relative!important;
+		display: block!important;
+		margin: 11px 0 0;
+		opacity: 1!important;
+	}
+	.spotifyAlbumList li .description h2 {
+		color: #919496!important;
+		font-size: 18px!important;
+		font-weight: 700!important;
+		margin-top: 24px!important;
+	}
+	.spotifyAlbumList li .description h4 {
+		font-size: 16px!important;
+	    color: #c1c3c6!important;
+	}
 }
