@@ -13,7 +13,7 @@ class App extends Component {
           <section className="spotifyContent container">
             <div className="row flex-row">
               <div className="col-xs-12 col-md-4 hero-intro">
-                <small>Escuchado recientement</small>
+                <small>Escuchado recientemente</small>
                 <h1 class="display-2 premium-display-2">Retoma el ritmo</h1>
                 <h3>Sigue disfrutando de la música que estabas escuchando justo donde la dejaste.</h3>
                 <a class="btn btn-lg btn-player" role="button">Abrir reproductor web</a>
